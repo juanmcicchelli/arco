@@ -71,7 +71,9 @@ router.post("/login", async (req, res) => {
 
         const token = jwt.sign(
             {
-                id: usuario._id
+                id: usuario._id,
+                email: usuario.email,
+                rol: usuario.rol
             },
             process.env.JWT_SECRET,
             {
@@ -80,7 +82,14 @@ router.post("/login", async (req, res) => {
         );
 
         res.json({
-            token
+            mensaje: "Login correcto",
+            token,
+            usuario: {
+                id: usuario._id,
+                nombre: usuario.nombre,
+                email: usuario.email,
+                rol: usuario.rol
+            }
         });
 
     } catch (error) {

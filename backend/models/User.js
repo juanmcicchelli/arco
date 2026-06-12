@@ -14,10 +14,15 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+   rol: {
+        type: String,
+        enum: ["USER", "ADMIN"],
+        default: "USER"},
   fechaAlta: {
     type: Date,
     default: Date.now
   }
+  
 });
 
 module.exports = mongoose.model("User", UserSchema);
