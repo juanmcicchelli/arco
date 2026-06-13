@@ -18,6 +18,10 @@ router.post(
     roleMiddleware("ADMIN"),
     async (req, res) => {
 
+        console.log("BODY RECIBIDO:");
+
+        console.log(req.body);
+
         try {
 
             const equipo = new Equipo(req.body);
@@ -28,14 +32,22 @@ router.post(
 
         } catch (error) {
 
+            if(error.code === 11000){
+
+                return res.status(400).json({
+                mensaje: "Ya existe un equipo con ese nombre"
+
+            });
+
             res.status(500).json({
                 error: error.message
             });
 
         }
 
-    }
-);
+        }
+
+});
 
 /*
 LISTAR EQUIPOS
