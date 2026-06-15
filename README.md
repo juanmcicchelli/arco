@@ -11,21 +11,21 @@ partidos y tabla de posiciones.
 3. Tecnologías
 Frontend HTML/CSS/JavaScript (evolucionable a React). Backend Node.js + Express. Base
 MongoDB Atlas. Seguridad JWT.
-4. Arquitectura
+5. Arquitectura
 Cliente -> API Express -> MongoDB Atlas. Middlewares JWT y Roles protegen rutas.
-5. Instalación
+6. Instalación
 Instalar Node.js, clonar repositorio, ejecutar npm install y configurar archivo .env.
-6. Variables de entorno
+7. Variables de entorno
 PORT=5001, JWT_SECRET=tu_clave, MONGO_URI=cadena_de_conexion.
-7. Estructura
+8. Estructura
 backend/config, middleware, models, routes, server.js y .env.
-8. Casos de uso
+9. Casos de uso
 Registro, Login, Dashboard ADMIN, Crear Equipo, Listar Equipos.
-9. Seguridad
+10. Seguridad
 JWT firmado con JWT_SECRET y middleware de autenticación.
-10. Publicación
+11. Publicación
 GitHub para código fuente y Render/Railway para despliegue gratuito.
-11. Estructura de carpetas
+12. Estructura de carpetas
 backend
 ■■■ config
 ■ ■■■ db.js
@@ -43,23 +43,23 @@ backend
 ■■■ .env
 ■■■ package.json
 ■■■ server.js
-12. server.js
+13. server.js
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/equipos', equiposRoutes);
-13. Pruebas API
+14. Pruebas API
 POST /api/auth/register
 POST /api/auth/login
 GET /api/admin/dashboard
 POST /api/equipos
 GET /api/equipos
-14. Ejemplo Login
+15. Ejemplo Login
 {
  "email":"juan@test.com",
  "password":"123456"
 }
-15. Roadmap
+16. Roadmap
 CRUD Partidos, Tabla de Posiciones, API Football, Frontend React + Material UI, resultados en
 vivo.
 Conclusión
